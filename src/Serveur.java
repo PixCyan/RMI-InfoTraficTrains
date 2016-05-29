@@ -1,3 +1,4 @@
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
@@ -22,7 +23,7 @@ public class Serveur implements ServiceInfos {
 
         boolean fin =false;
         while(!fin) {
-            sleep(5000);
+            sleep(8000);
             InfoTrafic infos = new InfoTrafic();
             for(Abonne c : clients) {
                 c.informer(infos);
@@ -43,5 +44,10 @@ public class Serveur implements ServiceInfos {
         if(clients.contains(a)) {
             clients.remove(a);
         }
+    }
+
+    @Override
+    public boolean estAbonne(Abonne a) {
+        return clients.contains(a);
     }
 }

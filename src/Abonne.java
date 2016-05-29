@@ -6,6 +6,7 @@ import java.rmi.RemoteException;
  */
 public interface Abonne extends Remote {
     public void informer(InfoTrafic info) throws RemoteException;
+    public String commandesDispo() throws RemoteException;
 
 
 }

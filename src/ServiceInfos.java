@@ -7,4 +7,5 @@ import java.rmi.RemoteException;
 public interface ServiceInfos extends Remote {
     public boolean abonner(Abonne a) throws RemoteException;
     public void desabonner(Abonne a) throws RemoteException;
+    public boolean estAbonne(Abonne a) throws RemoteException;
 }
